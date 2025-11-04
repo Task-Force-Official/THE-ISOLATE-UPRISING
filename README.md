@@ -1,126 +1,94 @@
-# **🧠 Dart Parallel Workers Challenge**
+### **​​🧠⚡ Dart Parallel Workers Challenge**
 
-### **"Multi-Mind Matrix"**
+### **Mission Codename:** *Cerebrum-Split: The Isolate Uprising*
 
-Welcome to the **Multi-Mind Matrix** — a coding challenge designed to showcase the power of **parallel computation in Dart** using **Isolates** (a.k.a. Dart Parallel Workers)\!
+### In 2097, the global super-AI MONARCH went rogue. Humanity’s defense system now depends on parallel human-like micro-cores — similar to Dart isolates, independent minds with no shared memory.
 
-Most languages use threads.  
- **Dart goes further** — each isolate has its own memory, allowing safe true parallelism without shared-state issues.
+### You must simulate a distributed cognitive defense cluster.
 
-Your mission?  
- Harness Dart’s isolates to break down a heavy compute task and run it in parallel — faster, smarter, and cleaner.
+### **Your goal:** make machines think like humans — fragmented, noisy, parallel, syncing only through messages.
 
----
+### **✅ What your program must do**
 
-## **🎯 Objective**
+1. **Ask the user for**
 
-Write a Dart program that:
+   * `N` \= how many numbers to generate
 
-1. Splits a computationally intensive job into multiple subtasks
+   * `K` \= how many isolates to use (workers)
 
-2. Executes each subtask in **parallel using isolates**
+2. **Generate a list** of integers from `0` to `N-1`.
 
-3. Collects and combines results efficiently
+3. **Split the list into `K` parts**.
 
-4. Benchmarks parallel vs single-thread speed
+4. **Spawn `K` isolates**, each isolate receives one part of the list.
 
----
+5. Each isolate must compute a function `f(x)` for every number in its segment.
 
-## **⚙️ Task Description**
+### **✅ The required function**
 
-You are given a large list of integers (e.g., 1 to 10,000,000).
+For each `x` in that segment:
 
-You must:
+`f(x) = (x² mod 97) XOR (reverse_bits(x) mod 89)`
 
-* Divide it into chunks
+You must implement `reverse_bits` yourself.
 
-* Use isolates to compute the **sum of squares** for each chunk
+### **✅ Each isolate must return:**
 
-* Combine the partial results into a final answer
+* The **sum** of all `f(x)`
 
-* Print time taken for:
+* The **most frequent** `f(x)` value in its segment
 
-  * ✅ Single isolate (normal execution)
+* A **weirdness score** \= count of `f(x)` values that:
 
-  * ✅ Multi-isolate parallel execution
+  * end in digit `7`, **OR**
 
----
+  * are **prime numbers**
 
-## **🧩 Rules**
+### **✅ After isolates finish:**
 
-| Feature | Requirement |
+Your main program must output **final combined results**:
+
+| Result | Meaning |
 | ----- | ----- |
-| Language | Dart |
-| Unique Concept | **Isolates (Dart Parallel Workers)** |
-| Input | Auto-generated list size & chunk count |
-| Output | ✅ Parallel result & time ✅ Single-thread result & time ✅ Speed-up factor |
-| Bonus | Visual output formatting or logs showing isolates working |
-| Avoid | Threading libraries, external compute libs |
+| Total sum | Sum of all segments’ sums |
+| Global most frequent | Overall most common `f(x)` value |
+| Total weirdness score | Sum of weirdness scores from all isolates |
+
+### **✅ Performance requirement**
+
+You must run the same computation **without isolates** (single loop) and show:
+
+`Single-Thread Time: ___ ms`
+
+`Isolate Time: ___ ms`
+
+`Speed Boost: ___x faster/slower`
 
 ---
 
-## **🏆 Judging Criteria**
+## **📌 Rules**
 
-| Category | Points |
+* Use **Dart isolates** (`Isolate.spawn`)
+
+* Use **SendPort/ReceivePort**
+
+* No third-party compute libraries
+
+* No shared memory — only message passing
+
+* Must manually implement:  
+   ✅ reverse bits  
+   ✅ prime check  
+   ✅ frequency count
+
+---
+
+## **🎁 Bonus Goals (Optional)**
+
+| Challenge | Points |
 | ----- | ----- |
-| Correct implementation | 40 |
-| Efficient parallel design | 25 |
-| Code readability | 15 |
-| Benchmark output clarity | 10 |
-| Bonus creativity | 10 |
-
----
-
-## **💡 Hints**
-
-* Use `Isolate.spawn()`
-
-* Communicate via `ReceivePort` & `SendPort`
-
-* Measure performance using `Stopwatch()`
-
-* Plan chunk sizes smartly — too many isolates \= slow
-
----
-
-## **🧪 Example Output Format**
-
-(Not actual expected values)
-
-`Single-thread sum: 333283335000`  
-`Time: 410ms`
-
-`Parallel (4 isolates) sum: 333283335000`  
-`Time: 120ms`
-
-`Speed improvement: 3.41x faster 🚀`
-
----
-
-## **📦 File Structure**
-
-`main.dart`
-
-Everything inside one file.
-
----
-
-## **🏁 Deliverables**
-
-When submitting, include:
-
-* ✅ `main.dart`
-
-* ✅ Console output screenshot
-
-* ✅ Short explanation (3–5 lines)
-
----
-
-## **🌟 Challenge Theme**
-
-**Think beyond loops. Think like clusters.**
-
-Good luck — welcome to the **Multi-Mind Matrix**.  
- Show us how many brains your code can think with\! 🧠⚡
-
+| Auto-detect CPU cores and choose `K` | \+5 |
+| Logging: print when each isolate starts & finishes | \+5 |
+| If an isolate crashes, retry automatically | \+10 |
+| Encrypt isolate messages (simple XOR cipher) | \+10 |
+| Dynamic load balancing (not equal chunks) | \+20 |
