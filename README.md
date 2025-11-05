@@ -6,7 +6,7 @@ In 2097, the global super-AI MONARCH went rogue. Humanity’s defense system now
 
 You must simulate a distributed cognitive defense cluster.
 
-### **What your program must do**
+## **What your program must do**
 
 1. **Ask the user for**
 
@@ -22,7 +22,7 @@ You must simulate a distributed cognitive defense cluster.
 
 5. Each isolate must compute a function `f(x)` for every number in its segment.
 
-### **The required function**
+## **The required function**
 
 For each `x` in that segment:
 
@@ -39,16 +39,6 @@ For reversebits(x), you need to convert x to binary (make sure that you use the 
 * The **most frequent** `f(x)` value in its segment
 
 * A **weirdness score** \= count of `f(x)` values that end in digit `7` **OR** are **prime numbers**
-
-### **After isolates finish:**
-
-Your main program must output **final combined results**:
-
-| Result | Meaning |
-| ----- | ----- |
-| Total sum | Sum of all segments’ sums |
-| Global most frequent | Overall most common `f(x)` value |
-| Total weirdness score | Sum of weirdness scores from all isolates |
 
 ---
 
@@ -69,9 +59,12 @@ Your main program must output **final combined results**:
 
 ---
 
-## **🎁 Bonus Points**
+## **Bonus Points**
 
 | Challenge | Points |
 | ----- | ----- |
 | Measure the execution time per isolate and the total execution time | \+2 |
 | Find the most efficient isolate (efficiency = segment length/execution time) | \+2 |
+| Print total sum of all `f(x)` (Sum of all segments’ sums) | \+1 |
+| Print global most frequent `f(x)` (Overall most common `f(x)` value) | \+1 |
+| Total weirdness score (Sum of weirdness scores from all isolates) | \+1 |
