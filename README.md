@@ -1,30 +1,30 @@
-### **​​🧠⚡ Dart Parallel Workers Challenge**
+### **​​Dart Parallel Workers Challenge**
 
-### **Mission Codename:** *Cerebrum-Split: The Isolate Uprising*
+**Mission Codename:** *Cerebrum-Split: The Isolate Uprising*
 
-### In 2097, the global super-AI MONARCH went rogue. Humanity’s defense system now depends on parallel human-like micro-cores — similar to Dart isolates, independent minds with no shared memory.
+In 2097, the global super-AI MONARCH went rogue. Humanity’s defense system now depends on parallel human-like micro-cores — similar to Dart isolates, independent minds with no shared memory.
 
-### You must simulate a distributed cognitive defense cluster.
+You must simulate a distributed cognitive defense cluster.
 
-### **Your goal:** make machines think like humans — fragmented, noisy, parallel, syncing only through messages.
+**Your goal:** make machines think like humans — fragmented, noisy, parallel, syncing only through messages.
 
-### **✅ What your program must do**
+**What your program must do**
 
 1. **Ask the user for**
 
-   * `N` \= how many numbers to generate
+   * `n` \= how many numbers to generate
 
-   * `K` \= how many isolates to use (workers)
+   * `k` \= how many isolates to use (workers)
 
-2. **Generate a list** of integers from `0` to `N-1`.
+2. **Generate a list** of integers from `0` to `n-1`.
 
-3. **Split the list into `K` parts**.
+3. **Split the list into `k` parts**.
 
-4. **Spawn `K` isolates**, each isolate receives one part of the list.
+4. **Spawn `k` isolates**, each isolate receives one part of the list.
 
 5. Each isolate must compute a function `f(x)` for every number in its segment.
 
-### **✅ The required function**
+### **The required function**
 
 For each `x` in that segment:
 
@@ -32,19 +32,15 @@ For each `x` in that segment:
 
 You must implement `reverse_bits` yourself.
 
-### **✅ Each isolate must return:**
+### **Each isolate must return:**
 
 * The **sum** of all `f(x)`
 
 * The **most frequent** `f(x)` value in its segment
 
-* A **weirdness score** \= count of `f(x)` values that:
+* A **weirdness score** \= count of `f(x)` values that end in digit `7` **OR** are **prime numbers**
 
-  * end in digit `7`, **OR**
-
-  * are **prime numbers**
-
-### **✅ After isolates finish:**
+### **After isolates finish:**
 
 Your main program must output **final combined results**:
 
@@ -54,19 +50,9 @@ Your main program must output **final combined results**:
 | Global most frequent | Overall most common `f(x)` value |
 | Total weirdness score | Sum of weirdness scores from all isolates |
 
-### **✅ Performance requirement**
-
-You must run the same computation **without isolates** (single loop) and show:
-
-`Single-Thread Time: ___ ms`
-
-`Isolate Time: ___ ms`
-
-`Speed Boost: ___x faster/slower`
-
 ---
 
-## **📌 Rules**
+## **Rules**
 
 * Use **Dart isolates** (`Isolate.spawn`)
 
@@ -77,13 +63,13 @@ You must run the same computation **without isolates** (single loop) and show:
 * No shared memory — only message passing
 
 * Must manually implement:  
-   ✅ reverse bits  
-   ✅ prime check  
-   ✅ frequency count
+   reverse bits  
+   prime check  
+   frequency count
 
 ---
 
-## **🎁 Bonus Goals (Optional)**
+## **🎁 Bonus Points**
 
 | Challenge | Points |
 | ----- | ----- |
