@@ -91,6 +91,6 @@ Also print aggregated totals and (if attempted) bonus metrics.
 ## Resources
 
 * Dart Isolates: [https://dart.dev/language/isolates](https://dart.dev/language/isolates)
-* Dart concurrency guide: [https://dart.dev/tutorials/language/concurrency](https://dart.dev/tutorials/language/concurrency)
+* Dart concurrency guide: [https://dart.dev/tutorials/language/concurrency](https://dart.dev/language/concurrency)
 
 Good luck, Operative. MONARCH is listening — make every isolate count.
