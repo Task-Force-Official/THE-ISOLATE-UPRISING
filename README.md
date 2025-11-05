@@ -1,4 +1,4 @@
-### **​​Dart Parallel Workers Challenge**
+# **​​Dart Parallel Workers Challenge**
 
 **Mission Codename:** *Cerebrum-Split: The Isolate Uprising*
 
@@ -6,9 +6,7 @@ In 2097, the global super-AI MONARCH went rogue. Humanity’s defense system now
 
 You must simulate a distributed cognitive defense cluster.
 
-**Your goal:** make machines think like humans — fragmented, noisy, parallel, syncing only through messages.
-
-**What your program must do**
+### **What your program must do**
 
 1. **Ask the user for**
 
@@ -31,6 +29,8 @@ For each `x` in that segment:
 `f(x) = (x² mod 97) XOR (reverse_bits(x) mod 89)`
 
 You must implement `reverse_bits` yourself.
+
+For reversebits(x), you need to convert x to binary (make sure that you use the minimum number of bits required to represent x). Then reverse the order of the bits and convert back to decimal.
 
 ### **Each isolate must return:**
 
@@ -73,8 +73,5 @@ Your main program must output **final combined results**:
 
 | Challenge | Points |
 | ----- | ----- |
-| Auto-detect CPU cores and choose `K` | \+5 |
-| Logging: print when each isolate starts & finishes | \+5 |
-| If an isolate crashes, retry automatically | \+10 |
-| Encrypt isolate messages (simple XOR cipher) | \+10 |
-| Dynamic load balancing (not equal chunks) | \+20 |
+| Measure the execution time per isolate and the total execution time | \+2 |
+| Find the most efficient isolate (efficiency = segment length/execution time) | \+2 |
