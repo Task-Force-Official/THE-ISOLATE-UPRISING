@@ -64,7 +64,6 @@ For reversebits(x), you need to convert x to binary (make sure that you use the 
 | Challenge | Points |
 | ----- | ----- |
 | Measure the execution time per isolate and the total execution time | \+2 |
-| Find the most efficient isolate (efficiency = segment length/execution time) | \+2 |
-| Calculate the total sum of all `f(x)` (Sum of all segments’ sums) | \+1 |
+| Find the most efficient isolate (efficiency = segment length/execution time) | \+1 |
+| Calculate the total sum of all `f(x)` and the total weirdness score | \+1 |
 | Find the global most frequent `f(x)` (Overall most common `f(x)` value) | \+1 |
-| Calculate the total weirdness score (Sum of weirdness scores from all isolates) | \+1 |
