@@ -71,7 +71,7 @@ Package your submission as `Lastname_Firstname_TaskForce_Dart.zip` containing:
 * `main.dart` — the working Dart program (clean, commented).
 * `screenshot.png` — execution screenshot showing user inputs and program output.
 * `report.txt` — brief (1–2 paragraphs) explanation of your approach and any edge cases handled.
-* Optional: `bonus.txt` — results and evidence for bonus tasks (timings, rankings, global freq.).
+* Optional: Screenshots of Bonus Objective Outputs + txt file with findings in Bonus Objective (execution time, most efficient isolate etc..)
 
 Your program must print, for each isolate:
 
