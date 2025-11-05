@@ -82,7 +82,7 @@ Your program must print, for each isolate:
 
 Also print aggregated totals and (if attempted) bonus metrics.
 
-## Brief Hiunts
+## Brief Hints
 
 * Test with small `n` (e.g., 20–100) first to validate correctness.
 * Ensure `reverse_bits` uses *minimal bits* required to represent `x` (e.g., `x = 5` -> `101` -> reverse -> `101` -> 5).
